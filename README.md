@@ -29,6 +29,9 @@ curl --location 'http://localhost:8083/connectors' \
 # Entrar no container
 docker exec -it {nome-ou-id-do-container} bash
 
+# Cria topico
+kafka-topics --bootstrap-server kafka:9092 --create --topic {nome do topico} --replication-factor 1 --partitions 1
+
 # Lista os topicos
 kafka-topics --bootstrap-server kafka:9092 --list
 
