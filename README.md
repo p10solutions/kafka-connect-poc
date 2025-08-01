@@ -26,6 +26,12 @@ curl --location 'http://localhost:8083/connectors' \
 }
 '
 
+#Entrar no container
+docker exec -it <nome-ou-id-do-container> bash
+
+#Lista os topicos
+kafka-topics --bootstrap-server kafka:9092 --list
+
 # Consumer topico criado no destino
 docker exec -it kafka-connect-poc-kafka-a-1 kafka-console-consumer --bootstrap-server kafka-b:9093 --topic source.topico-1 --from-beginning
 
