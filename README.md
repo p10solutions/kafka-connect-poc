@@ -1,6 +1,6 @@
 # kafka-connect-poc
 
-Cria o connector
+# Cria o connector
 
 curl --location 'http://localhost:8083/connectors' \
 --header 'Content-Type: application/json' \
@@ -26,11 +26,11 @@ curl --location 'http://localhost:8083/connectors' \
 }
 '
 
-Consumer topico criado no destino
+# Consumer topico criado no destino
 docker exec -it kafka-connect-poc-kafka-a-1 kafka-console-consumer --bootstrap-server kafka-b:9093 --topic source.topico-1 --from-beginning
 
-Consumer topico origem
+# Consumer topico origem
 docker exec -it kafka-connect-poc-kafka-a-1 kafka-console-consumer --bootstrap-server kafka-a:9092 --topic topico-1 --from-beginning
 
-Producer topico origem
+# Producer topico origem
 docker exec -it kafka-connect-poc-kafka-a-1 kafka-console-producer --bootstrap-server kafka-a:9092 --topic topico-1
